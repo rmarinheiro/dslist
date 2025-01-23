@@ -1,6 +1,7 @@
 package br.com.rafael.dslist.dto;
 
 import br.com.rafael.dslist.entities.Game;
+import br.com.rafael.dslist.projection.GameMinProjection;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -72,9 +73,14 @@ public class GameMinDTO {
         id = entity.getId();
         title = entity.getTitle();
         year = entity.getYear();
-        genre = entity.getGenre();
-        platforms = entity.getPlatforms();
-        score = entity.getScore();
+        imgUrl = entity.getImgUrl();
+        shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection entity) {
+        id = entity.getId();
+        title = entity.getTitle();
+        year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
     }
